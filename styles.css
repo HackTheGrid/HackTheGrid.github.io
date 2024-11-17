@@ -1,0 +1,153 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Style for modal content to fix scrolling issue */
+.content-container {
+    max-width: 800px;
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 75vh; /* Limit height to avoid overflow */
+    width: 100%; /* Full width for responsiveness */
+}
+
+.modal-body {
+    padding: 0; /* Remove unnecessary padding for better alignment */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content at the top */
+    overflow-y: auto; /* Allow modal to scroll if content is tall */
+}
+
+.modal-fullscreen .modal-content {
+    padding: 10px; /* Add padding around the entire modal */
+}
+
+/* Ensure images are responsive inside the modal */
+.content-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style code blocks for readability */
+.content-container pre {
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .content-container {
+        max-width: 95%; /* Use more space on smaller screens */
+        padding: 15px; /* Adjust padding for smaller devices */
+    }
+}
+
+
+/* Style for post content */
+#postContent {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px; /* Limit the width */
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#postContent img {
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto;
+}
+
+#postContent pre {
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.fixed-banner {
+    z-index: 1030;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    margin: 0; /* Remove white margin */
+    padding: 0.5rem; /* Maintain readability */
+}
+
+.fixed-header {
+    position: sticky;
+    top: 40px; /* Height of the banner */
+    z-index: 1020;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #007BFF;
+    color: white;
+}
+
+#hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#featured-content {
+    padding: 50px 20px;
+    text-align: center;
+}
