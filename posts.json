@@ -15,16 +15,9 @@
     },
     {
         "id": 3,
-        "title": "Wireless Pentesting Basics",
-        "contentFile": "posts/wireless-pentesting-basics.html",
+        "title": "Flipper Zero Sub-GHz Hacking",
+        "contentFile": "posts/flipper-zero-sub-ghz-hacking.html",
         "category": "pentesting",
-        "date": "2024-11-10"
-    },
-    {
-        "id": 4,
-        "title": "Exploiting Buffer Overflows",
-        "contentFile": "posts/exploiting-buffer-overflows.html",
-        "category": "exploits",
-        "date": "2024-11-12"
+        "date": "2024-12-01"
     }
 ]

