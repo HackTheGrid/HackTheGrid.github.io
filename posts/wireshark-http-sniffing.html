@@ -1,0 +1,26 @@
+<p>Wireshark is a powerful tool that can be used to sniff packets on a network. In this post, we'll look at how to use Wireshark to sniff HTTP packets and extract passwords.</p>
+<img src="https://www.unixmen.com/wp-content/uploads/2013/04/netcat_180.png" alt="Wireshark Interface" class="img-fluid mb-3">
+
+<p>First, start Wireshark and begin capturing packets on the desired interface. You can use the following display filter to only show HTTP traffic:</p>
+<pre><code>http</code></pre>
+
+<p>You could also use the following filter to search for POST requests which typically contain login credentials:</p>
+<pre><code>http.request.method == "POST"</code></pre>
+
+<h3>Try it yourself:</h3>
+<p>1. Open Wireshark and start capturing packets.</p>
+<p>2. Configure wireshark to capture only HTTP traffic and HTTP post requests by using the display filter <code>http && http.request.method == "POST"</code>.</p>
+<p>3. Visit a HTTP website that requires authentication (e.g., <a href="http://testphp.vulnweb.com/login.php">testphp.vulnweb.com</a>) and log in.</p>
+<p>4. Stop the packet capture and search for the POST request containing the username and password (Typically under HTML Form URL Encoded).</p>
+<p>Could look something like this:</p>
+<pre><code>HTML Form URL Encoded: application/x-www-form-urlencoded
+Form item: "uname" = "admin"
+Form item: "pass" = "mypassword123"</code></pre>
+
+<p>If you successfully found your credentials, then congratulations! You've successfully sniffed HTTP packets with Wireshark.</p>
+
+<h3>Possible Issues:</h3>
+<ul>
+    <li>HTTPS traffic is encrypted and cannot be sniffed in plaintext.</li>
+    <li>You have to be on the same network as the victim to sniff their packets.</li>
+</ul>
